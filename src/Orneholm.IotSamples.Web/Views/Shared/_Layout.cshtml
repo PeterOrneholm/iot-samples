@@ -1,0 +1,53 @@
+@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="/" />
+
+    <!-- CREDITS -->
+    <!--
+    This site is created and maintained by Peter Örneholm.
+    https://twitter.com/PeterOrneholm
+    https://peter.orneholm.com/
+    Source available at GitHub:
+    https://github.com/PeterOrneholm/iot-samples
+
+
+    <!-- Meta -->
+    <title>Azure IoT Samples</title>
+    <meta name="author" content="Peter Örneholm (@("@PeterOrneholm"))">
+
+    <!-- Webapp -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+    <!-- Application Insights -->
+    @Html.Raw(JavaScriptSnippet.FullScript)
+</head>
+<body>
+    <!-- Body -->
+    @RenderBody()
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h4>About</h4>
+                    <p>
+                        Samples for IoT services in Azure.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    @RenderSection("Scripts", required: false)
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>
